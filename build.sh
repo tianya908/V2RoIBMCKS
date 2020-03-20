@@ -65,6 +65,26 @@ for name in $(ibmcloud  cr namespace-list | grep del_); do (echo y) | ibmcloud  
 NS=del_$(openssl rand -base64 16 | md5sum | head -c16)
 ibmcloud  cr namespace-add $NS
 
+# 部署角色权限
+cat << _EOF_ > fabric8-rbac.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: fabric8-rbac
+subjects:
+  - kind: ServiceAccount
+    # Reference to upper's `metadata.name`
+    name: default
+    # Reference to upper's `metadata.namespace`
+    namespace: default
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+_EOF_
+echo -e '\ncreate role to IBM Cloud Kubernetes Service ...'
+kubectl apply -f fabric8-rbac.yaml
+
 # 准备 V2RAY 文件，配置 V2RAY 端口
 mkdir -p /root/v2ray
 cd /root/v2ray/
