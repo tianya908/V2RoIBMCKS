@@ -136,11 +136,11 @@ echo
 IBMCR_DOMAIN=$(ibmcloud cr region | grep 'icr.io' | cut -d "'" -f4)
 
 # 设置 KUBECTLVER
-KUBECTLVER='v'$(ibmcloud ks cluster get $CLUSTER_NAME | grep 'Version' | awk '{print $2}' | cut -d '_' -f1)
+KUBECTLVER='v'$(ibmcloud ks cluster get --cluster $CLUSTER_NAME | grep 'Version' | awk '{print $2}' | cut -d '_' -f1)
 
 # 将 IBM Cloud CLI 配置为运行 kubectl
 echo -e '\nConfigurate IBM Cloud CLI to run kubectl ...'
-$(ibmcloud ks cluster config $CLUSTER_NAME --export -s)
+$(ibmcloud ks cluster config --cluster $CLUSTER_NAME --export -s)
 
 # 显示 kubectl 版本
 echo -e '\nKubectl version:'
