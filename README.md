@@ -12,7 +12,7 @@ V2Ray on IBM Cloud Kubernetes Service
 
 ## 通过 IBM Cloud Kubernetes Terminal 部署
 
-    bash <(curl -Ls https://raw.githubusercontent.com/jogolor/V2RoIBMCKS/master/start.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/USAmy/V2RoIBMCKS/master/start.sh)
 
 ---
 
@@ -20,8 +20,8 @@ V2Ray on IBM Cloud Kubernetes Service
 
 先准备环境：
 
-    bash <(curl -Ls https://raw.githubusercontent.com/jogolor/V2RoIBMCKS/master/initide.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/USAmy/V2RoIBMCKS/master/initide.sh)
     
 再实施部署：
 
-    bash <(curl -Ls https://raw.githubusercontent.com/jogolor/V2RoIBMCKS/master/start4ide.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/USAmy/V2RoIBMCKS/master/start4ide.sh)
