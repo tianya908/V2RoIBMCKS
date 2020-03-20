@@ -79,7 +79,7 @@ let V2RAY_PORT=$PORT_RAND+30000
 # 构建与注册容器映像 V2RAY
 echo -e '\nBuild and register the container image of "V2Ray" for VMess server ...'
 echo -e "\nDownload V2Ray's config.json of VMess server ..."
-curl -Lo config.json https://raw.githubusercontent.com/jogolor/V2RoIBMCKS/master/config-vmess.json
+curl -Lo config.json https://raw.githubusercontent.com/USAmy/V2RoIBMCKS/master/config-vmess.json
 sed -i "s/{V2RAY_PORT}/$V2RAY_PORT/g" config.json
 sed -i "s/{UUID_PWD}/$UUID/g" config.json
 sed -i "s/{WEBSOCKET_PATH}/$WEBSOCKET_PATH/g" config.json
@@ -150,7 +150,7 @@ V2RAY_IP=$(kubectl get svc v2ray-tcp-for-caddy -o=custom-columns=IP:.spec.cluste
 rm -f ./config.json # 清理容器映像 V2RAY 的 config.json
 echo -e '\nBuild and register the container image of "V2Ray-SS" for Shadowsocks server ...'
 echo -e "\nDownload V2Ray's config.json of Shadowsocks server ..."
-curl -Lo config.json https://raw.githubusercontent.com/jogolor/V2RoIBMCKS/master/config-shadowsocks.json
+curl -Lo config.json https://raw.githubusercontent.com/USAmy/V2RoIBMCKS/master/config-shadowsocks.json
 sed -i "s/{V2RAY_PORT}/$V2RAY_PORT/g" config.json
 sed -i "s/{UUID_PWD}/$SS_PWD/g" config.json
 sed -i "s/{WEBSOCKET_PATH}/$SS_WEBSOCKET_PATH/g" config.json
