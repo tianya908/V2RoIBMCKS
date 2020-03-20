@@ -140,7 +140,7 @@ KUBECTLVER='v'$(ibmcloud ks cluster get --cluster $CLUSTER_NAME | grep 'Version'
 
 # 将 IBM Cloud CLI 配置为运行 kubectl
 echo -e '\nConfigurate IBM Cloud CLI to run kubectl ...'
-$(ibmcloud ks cluster config --cluster $CLUSTER_NAME --export -s)
+$(ibmcloud ks cluster config --cluster $CLUSTER_NAME -s)
 
 # 显示 kubectl 版本
 echo -e '\nKubectl version:'
