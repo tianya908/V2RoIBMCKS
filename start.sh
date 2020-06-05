@@ -77,7 +77,7 @@ fi
 #while [ -z $DOMAIN ]
 #do
 #    echo -e -n '\n您未输入域名，请重新输入：'
-    read DOMAIN
+#    read DOMAIN
 #done
 #echo -e -n '\n请输入找回证书私钥时使用的 email 地址：'
 #read EMAIL
@@ -87,7 +87,7 @@ fi
 #    read EMAIL
 #done
 
-sleep 3
+#sleep 3
 
 # 显示 BBR 安装信息
 if $BBR; then
