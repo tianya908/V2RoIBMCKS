@@ -69,23 +69,23 @@ else
 fi
 
 # 询问 Caddy 申请证书时使用的 DOMAIN 与 EMAIL
-echo -e '\n++++++++++++++++++++++++++++++++++++++++++++'
-echo 'Finally, configure Caddy with TLS.'
-echo '++++++++++++++++++++++++++++++++++++++++++++'
-echo -e -n "\n请输入 Caddy 申请 Let's Encrypt 证书时使用的域名："
-read DOMAIN
-while [ -z $DOMAIN ]
-do
-    echo -e -n '\n您未输入域名，请重新输入：'
+#echo -e '\n++++++++++++++++++++++++++++++++++++++++++++'
+#echo 'Finally, configure Caddy with TLS.'
+#echo '++++++++++++++++++++++++++++++++++++++++++++'
+#echo -e -n "\n请输入 Caddy 申请 Let's Encrypt 证书时使用的域名："
+#read DOMAIN
+#while [ -z $DOMAIN ]
+#do
+#    echo -e -n '\n您未输入域名，请重新输入：'
     read DOMAIN
-done
-echo -e -n '\n请输入找回证书私钥时使用的 email 地址：'
-read EMAIL
-while [ -z $EMAIL ]
-do
-    echo -e -n '\n您未输入email地址，请重新输入：'
-    read EMAIL
-done
+#done
+#echo -e -n '\n请输入找回证书私钥时使用的 email 地址：'
+#read EMAIL
+#while [ -z $EMAIL ]
+#do
+#    echo -e -n '\n您未输入email地址，请重新输入：'
+#    read EMAIL
+#done
 
 sleep 3
 
